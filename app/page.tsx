@@ -1,6 +1,29 @@
-import { Activities } from "@/components/activities";
+"use client";
 import { ActivityReset } from "@/components/activity-reset";
 import { CustomActivities } from "@/components/custom-activities";
+import { Skeleton } from "@/components/ui/skeleton";
+import dynamic from "next/dynamic";
+
+const Activities = dynamic(
+  () => import("@/components/activities").then((mod) => mod.Activities),
+  {
+    ssr: false,
+    loading: () => (
+      <>
+        <div className="space-y-1">
+          <Skeleton className="h-8 rounded-md w-40" />
+          <Skeleton className="h-8 rounded-md" />
+          <Skeleton className="h-8 rounded-md" />
+        </div>
+        <div className="space-y-1">
+          <Skeleton className="h-8 rounded-md w-40" />
+          <Skeleton className="h-8 rounded-md" />
+          <Skeleton className="h-8 rounded-md" />
+        </div>
+      </>
+    ),
+  }
+);
 
 export default function Home() {
   return (
