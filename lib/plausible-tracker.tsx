@@ -35,7 +35,10 @@ export default function PlausibleTracker({
 }) {
   useEffect(() => {
     if (domain && apiHost) {
-      initPlausible(domain, apiHost);
+      const targetDomain = navigator.userAgent.includes("Overwolf")
+        ? domain + "-app"
+        : domain;
+      initPlausible(targetDomain, apiHost);
     }
   }, []);
 
