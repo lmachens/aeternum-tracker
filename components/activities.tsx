@@ -22,14 +22,13 @@ export function Activities() {
       value={activitiesStore.openCategories}
       onValueChange={activitiesStore.setOpenCategories}
     >
-      {customCategories.sort().map((category) => (
+      {customCategories.map((category) => (
         <AccordionItem key={category} value={category}>
           <AccordionTrigger>{category}</AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-col gap-1">
               {activitiesStore.customActivities
                 .filter((activity) => activity.category === category)
-                .sort((a, b) => a.title.localeCompare(b.title))
                 .map((activity) => (
                   <ActivityProgress key={activity.title} {...activity} />
                 ))}
