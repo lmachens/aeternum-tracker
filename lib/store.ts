@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 import { Activity, activities } from "./activities";
 
 export const useActivitiesStore = create(
@@ -11,6 +11,8 @@ export const useActivitiesStore = create(
     progress: Record<string, number>;
     resetProgress: (frequently: Activity["frequently"]) => void;
     setProgress: (activity: string, progress: number) => void;
+    openCategories: string[];
+    setOpenCategories: (categories: string[]) => void;
   }>(
     (set, get) => ({
       customActivities: activities,
@@ -27,6 +29,9 @@ export const useActivitiesStore = create(
       restoreDefaultActivities: () =>
         set({
           customActivities: activities,
+          openCategories: [
+            ...new Set(activities.map((activity) => activity.category)),
+          ],
         }),
       progress: {},
       resetProgress: (frequently) =>
@@ -49,10 +54,16 @@ export const useActivitiesStore = create(
             [activity]: progress,
           },
         }),
+      openCategories: [
+        ...new Set(activities.map((activity) => activity.category)),
+      ],
+      setOpenCategories: (categories) =>
+        set({
+          openCategories: categories,
+        }),
     }),
     {
       name: "activities-storage",
-      storage: createJSONStorage(() => storage),
     }
   )
 );

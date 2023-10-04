@@ -17,11 +17,7 @@ export function ActivityReset() {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          disabled={Object.keys(activitiesStore.progress).length === 0}
-          className="flex gap-2"
-        >
+        <Button variant="outline" className="flex gap-2">
           <span>Reset Progress</span>
           <ChevronDown />
         </Button>
