@@ -217,7 +217,7 @@ export const activities: Activity[] = [
     frequently: "daily",
   },
     {
-    title: "Prismatic Blocke",
+    title: "Prismatic Block",
     category: "Crafting",
     max: 10,
     frequently: "daily",
