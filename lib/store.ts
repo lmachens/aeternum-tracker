@@ -1,16 +1,6 @@
 import { create } from "zustand";
-import { StateStorage, createJSONStorage, persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import { Activity, activities } from "./activities";
-
-const storage: StateStorage = {
-  getItem: (name: string) =>
-    new Promise((res) => {
-      if (localStorage === undefined) return res(null);
-      setTimeout(() => res(localStorage.getItem(name)), 200);
-    }),
-  setItem: (name: string, value: string) => localStorage.setItem(name, value),
-  removeItem: (name: string) => localStorage.removeItem(name),
-};
 
 export const useActivitiesStore = create(
   persist<{
@@ -83,7 +73,6 @@ export const useSettingsStore = create(
     }),
     {
       name: "settings-storage",
-      storage: createJSONStorage(() => storage),
     }
   )
 );
