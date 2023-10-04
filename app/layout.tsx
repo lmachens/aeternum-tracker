@@ -1,5 +1,6 @@
 import { PageFooter } from "@/components/page-footer";
 import { PageHeader } from "@/components/page-header";
+import PlausibleTracker from "@/lib/plausible-tracker";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -26,6 +27,10 @@ export default function RootLayout({
           {children}
           <PageFooter />
         </div>
+        <PlausibleTracker
+          domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
+          apiHost={process.env.NEXT_PUBLIC_PLAUSIBLE_API_HOST}
+        />
       </body>
     </html>
   );
