@@ -5,7 +5,7 @@ export type Activity = {
   frequently: "daily" | "weekly";
 };
 export const activities: Activity[] = [
-{
+  {
     title: "Faction Influence Screenshot for Aeternum-map.gg",
     category: "Tools",
     max: 1,
@@ -29,19 +29,19 @@ export const activities: Activity[] = [
     max: 35,
     frequently: "weekly",
   },
-          {
+  {
     title: "Sandworm",
     category: "Gameplay",
     max: 15,
     frequently: "daily",
   },
-           {
+  {
     title: "Sandworm Weekly",
     category: "Gameplay",
     max: 1,
     frequently: "weekly",
   },
-   {
+  {
     title: "Transmog Token",
     category: "Gameplay",
     max: 1,
@@ -65,13 +65,13 @@ export const activities: Activity[] = [
     max: 2,
     frequently: "daily",
   },
-   {
+  {
     title: "Obsidian Gypsum (L60+ Open World Bosses)",
     category: "Gypsum",
     max: 3,
     frequently: "daily",
   },
-   {
+  {
     title: "Topaz Gypsum (L55+ Mobs with Potion active)",
     category: "Gypsum",
     max: 15,
@@ -95,68 +95,68 @@ export const activities: Activity[] = [
     max: 3,
     frequently: "daily",
   },
-    {
+  {
     title: "Sapphire Gypsum (Dungeon Bosses)",
     category: "Gypsum",
     max: 2,
     frequently: "daily",
-  },   
+  },
 
-    {
+  {
     title: "Citrine Gypsum (PvE Arena )",
     category: "Gypsum",
     max: 2,
     frequently: "daily",
   },
-     {
+  {
     title: "Heliopolis",
     category: "Group Elite Chest Runs",
     max: 1,
     frequently: "daily",
   },
-   {
+  {
     title: "Khepri",
     category: "Group Elite Chest Runs",
     max: 1,
     frequently: "daily",
   },
-    {
+  {
     title: "Castrum",
     category: "Group Elite Chest Runs",
     max: 1,
     frequently: "daily",
   },
-     {
+  {
     title: "Wall",
     category: "Group Elite Chest Runs",
     max: 1,
     frequently: "daily",
   },
-      {
+  {
     title: "Sirens",
     category: "Group Elite Chest Runs",
     max: 1,
     frequently: "daily",
   },
-         {
+  {
     title: "Eternal Pools",
     category: "Group Elite Chest Runs",
     max: 1,
     frequently: "daily",
   },
-        {
+  {
     title: "Myrkgard",
     category: "Group Elite Chest Runs",
     max: 1,
     frequently: "daily",
   },
-         {
+  {
     title: "Mines",
     category: "Group Elite Chest Runs",
     max: 1,
     frequently: "daily",
   },
-         {
+  {
     title: "Imperial Palace",
     category: "Group Elite Chest Runs",
     max: 1,
@@ -168,55 +168,55 @@ export const activities: Activity[] = [
     max: 10,
     frequently: "daily",
   },
-   {
+  {
     title: "Runic Leather",
     category: "Crafting",
     max: 10,
     frequently: "daily",
   },
-    {
+  {
     title: "Phoenixweave",
     category: "Crafting",
     max: 10,
     frequently: "daily",
   },
-    {
+  {
     title: "Glittering Ebony",
     category: "Crafting",
     max: 10,
     frequently: "daily",
   },
-    {
+  {
     title: "Runestone",
     category: "Crafting",
     max: 10,
     frequently: "daily",
   },
-   {
+  {
     title: "Prismatic Ingot",
     category: "Crafting",
     max: 10,
     frequently: "daily",
   },
-   {
+  {
     title: "Prismatic Leather",
     category: "Crafting",
     max: 10,
     frequently: "daily",
   },
-    {
+  {
     title: "Prismatic Cloth",
     category: "Crafting",
     max: 10,
     frequently: "daily",
   },
-    {
+  {
     title: "Prismatic Planks",
     category: "Crafting",
     max: 10,
     frequently: "daily",
   },
-    {
+  {
     title: "Prismatic Block",
     category: "Crafting",
     max: 10,

@@ -1,11 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -70,19 +66,14 @@ export function CustomActivities() {
   }
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
         <Button variant="secondary">Add Activity</Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-80">
+      </DialogTrigger>
+      <DialogContent className="w-80">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4">
-            <div className="space-y-2">
-              <h4 className="font-medium leading-none">Add Activity</h4>
-              <p className="text-sm text-muted-foreground">
-                Set the name and frequency of your new activity.
-              </p>
-            </div>
+            <h4 className="font-medium leading-none">Add Activity</h4>
             <FormField
               control={form.control}
               name="category"
@@ -162,10 +153,12 @@ export function CustomActivities() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit" variant="secondary">
+              Submit
+            </Button>
           </form>
         </Form>
-      </PopoverContent>
-    </Popover>
+      </DialogContent>
+    </Dialog>
   );
 }
