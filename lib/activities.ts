@@ -6,24 +6,6 @@ export type Activity = {
 };
 export const activities: Activity[] = [
   {
-    title: "Faction Influence Screenshot for Aeternum-map.gg",
-    category: "Tools",
-    max: 1,
-    frequently: "daily",
-  },
-  {
-    title: "Faction Bonus Missions",
-    category: "Faction",
-    max: 3,
-    frequently: "daily",
-  },
-  {
-    title: "Gypsum From Faction Vendor",
-    category: "Faction",
-    max: 5,
-    frequently: "daily",
-  },
-  {
     title: "Mutated Dungeons",
     category: "Gameplay",
     max: 35,
@@ -46,6 +28,24 @@ export const activities: Activity[] = [
     category: "Gameplay",
     max: 1,
     frequently: "weekly",
+  },
+  {
+    title: "Faction Influence Screenshot for Aeternum-map.gg",
+    category: "Tools",
+    max: 1,
+    frequently: "daily",
+  },
+  {
+    title: "Faction Bonus Missions",
+    category: "Faction",
+    max: 3,
+    frequently: "daily",
+  },
+  {
+    title: "Gypsum From Faction Vendor",
+    category: "Faction",
+    max: 5,
+    frequently: "daily",
   },
   {
     title: "Sulfur Chest/Acid Pools Run",
@@ -108,7 +108,7 @@ export const activities: Activity[] = [
     max: 2,
     frequently: "daily",
   },
- {
+  {
     title: "Eternal Pool",
     category: "Group Elite Chest Runs",
     max: 1,
