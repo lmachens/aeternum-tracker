@@ -30,7 +30,7 @@ export const activities: Activity[] = [
     frequently: "weekly",
   },
   {
-    title: "Faction Influence Screenshot for Aeternum-map.gg",
+    title: "Faction Influence Screenshot for Aeternum-map.th.gl",
     category: "Tools",
     max: 1,
     frequently: "daily",

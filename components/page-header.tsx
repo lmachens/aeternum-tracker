@@ -8,7 +8,7 @@ export function PageHeader() {
           Aeternum Tracker
         </p>
         <a
-          href="https://aeternum-map.gg?ref=aeternum-tracker"
+          href="https://aeternum-map.th.gl?ref=aeternum-tracker"
           target="_blank"
           className="font-bold text-sm flex whitespace-nowrap items-center gap-1 hover:underline"
         >
