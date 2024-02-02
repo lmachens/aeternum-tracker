@@ -1,11 +1,18 @@
 "use client";
 import { ExternalLink } from "lucide-react";
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useActivitiesStore } from "@/lib/store";
 
 
 export function PageHeader() {
 
-  const [characterName, setCharacterName] = useState('');
+  type ActivitiesState = {
+    characterName: string;
+    setCharacterName: (name: string) => void;
+  };
+
+  const characterName = useActivitiesStore((state: ActivitiesState) => state.characterName);
+  const setCharacterName = useActivitiesStore((state: ActivitiesState) => state.setCharacterName);
 
   useEffect(() => {
     document.title = characterName ? `${characterName} - Aeternum Tracker` : "Track and Customize Your New World Progress - Aeternum Tracker";
@@ -21,7 +28,11 @@ export function PageHeader() {
         <input
           type="text"
           placeholder="Enter character name"
-          onChange={(event) => setCharacterName(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              setCharacterName((event.target as HTMLInputElement).value);
+            }
+          }}
           className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none text-gray-500"
         />
 
