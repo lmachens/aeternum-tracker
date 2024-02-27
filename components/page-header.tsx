@@ -16,7 +16,7 @@ export function PageHeader() {
           <ExternalLink className="h-4 w-4" />
         </a>
         <a
-          href="https://discord.gg/NTZu8Px"
+          href="https://th.gl/discord"
           target="_blank"
           className="font-bold text-sm flex whitespace-nowrap items-center hover:underline"
         >

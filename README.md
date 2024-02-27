@@ -13,7 +13,7 @@ Aeternum Tracker is a web application designed to help New World players track a
 ## Contribution
 
 This app is Open Source. Contributors are highly welcome!
-Join the [Discord](https://discord.com/invite/NTZu8Px).
+Join the [Discord](https://th.gl/discord).
 
 ## Licensing
 

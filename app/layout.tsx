@@ -28,8 +28,8 @@ export default function RootLayout({
           <PageFooter />
         </div>
         <PlausibleTracker
-          domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
-          apiHost={process.env.NEXT_PUBLIC_PLAUSIBLE_API_HOST}
+          domain="aeternum-tracker.th.gl"
+          apiHost="https://metrics.th.gl"
         />
       </body>
     </html>
