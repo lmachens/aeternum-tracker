@@ -27,6 +27,27 @@ const Activities = dynamic(
 );
 
 export default function Home() {
+
+  const { useCharacterStore } = require('../lib/store.ts');
+  const marioStore = useCharacterStore('Mario');
+  // const luigiStore = useCharacterStore('Luigi');
+
+  
+  marioStore.setProgress("Mutated Dungeons", 6);
+  // luigiStore.setProgress("Mutated Dungeons", 9);
+
+  console.log(marioStore);
+  // console.log(luigiStore);
+
+  const { useActivitiesStore } = require('../lib/store.ts');
+  // const activitiesStore2 = useActivitiesStore();
+  // activitiesStore2.setProgress("Mutated Dungeons", 6);
+
+  // console.log(activitiesStore2);
+
+
+
+
   return (
     <main className="flex flex-col gap-4 container grow">
       <div className="grid grid-cols-12 items-center justify-items-center md:justify-items-end gap-4">

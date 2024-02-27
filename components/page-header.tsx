@@ -1,12 +1,41 @@
+"use client";
 import { ExternalLink } from "lucide-react";
+import { useEffect } from 'react';
+import { useActivitiesStore } from "@/lib/store";
+
 
 export function PageHeader() {
+
+  type ActivitiesState = {
+    characterName: string;
+    setCharacterName: (name: string) => void;
+  };
+
+  const characterName = useActivitiesStore((state: ActivitiesState) => state.characterName);
+  const setCharacterName = useActivitiesStore((state: ActivitiesState) => state.setCharacterName);
+
+  useEffect(() => {
+    document.title = characterName ? `${characterName} - Aeternum Tracker` : "Track and Customize Your New World Progress - Aeternum Tracker";
+  }, [characterName]);
+
   return (
     <header className="fixed left-0 top-0 z-50 flex w-full justify-center border-b  bg-gradient-to-b py-2 backdrop-blur-2xl border-neutral-800 bg-zinc-800/30 from-inherit">
       <div className="container mx-auto flex items-center gap-2">
         <p className="text-lg md:text-2xl font-extrabold tracking-tight grow whitespace-nowrap">
           Aeternum Tracker
         </p>
+
+        <input
+          type="text"
+          placeholder="Enter character name"
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              setCharacterName((event.target as HTMLInputElement).value);
+            }
+          }}
+          className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none text-gray-500"
+        />
+
         <a
           href="https://aeternum-map.th.gl?ref=aeternum-tracker"
           target="_blank"
