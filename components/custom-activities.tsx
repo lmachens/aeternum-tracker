@@ -23,6 +23,7 @@ import {
   FormLabel,
   FormMessage,
 } from "./ui/form";
+import { useToast } from "./ui/use-toast";
 
 const formSchema = z.object({
   category: z.string().min(1, {
@@ -39,6 +40,7 @@ const formSchema = z.object({
 
 export function CustomActivities() {
   const [open, setOpen] = useState(false);
+  const { toast } = useToast();
 
   const activitiesStore = useActivitiesStore();
   const form = useForm<z.infer<typeof formSchema>>({
@@ -57,7 +59,11 @@ export function CustomActivities() {
         (activity) => activity.title === values.title
       )
     ) {
-      alert("Activity with this name already exists!");
+      toast({
+        variant: "destructive",
+        title: "Activity with this name already exists!",
+        description: "Please select a different name or category.",
+      });
     } else {
       activitiesStore.addCustomActivity(values);
       form.reset();

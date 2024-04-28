@@ -8,10 +8,12 @@ import { useActivitiesStore } from "@/lib/store";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { useToast } from "./ui/use-toast";
+import { ToastAction } from "./ui/toast";
 
 export function ActivityReset() {
   const [open, setOpen] = useState(false);
-
+  const { toast } = useToast();
   const activitiesStore = useActivitiesStore();
 
   return (
@@ -43,13 +45,19 @@ export function ActivityReset() {
           variant="ghost"
           className="w-full hover:bg-destructive"
           onClick={() => {
-            if (
-              confirm(
-                "Are you sure that you want to restore the default activities?"
-              )
-            ) {
-              activitiesStore.restoreDefaultActivities();
-            }
+            toast({
+              variant: "destructive",
+              title:
+                "Are you sure that you want to restore the default activities?",
+              action: (
+                <ToastAction
+                  altText="Restore"
+                  onClick={() => activitiesStore.restoreDefaultActivities()}
+                >
+                  Restore
+                </ToastAction>
+              ),
+            });
           }}
         >
           Restore activities

@@ -6,9 +6,12 @@ import { useActivitiesStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { Check, EyeOff, Plus, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { useToast } from "./ui/use-toast";
+import { ToastAction } from "./ui/toast";
 
 export function ActivityProgress({ title, max, frequently }: Activity) {
   const activitiesStore = useActivitiesStore();
+  const { toast } = useToast();
 
   const progress = activitiesStore.progress[title] ?? 0;
   const isMax = progress === max;
@@ -63,9 +66,18 @@ export function ActivityProgress({ title, max, frequently }: Activity) {
       <Button
         size="icon"
         onClick={() => {
-          if (confirm("Are you sure that you want to remove this activity?")) {
-            activitiesStore.removeCustomActivity(title);
-          }
+          toast({
+            variant: "destructive",
+            title: "Are you sure that you want to remove this activity?",
+            action: (
+              <ToastAction
+                altText="Remove"
+                onClick={() => activitiesStore.removeCustomActivity(title)}
+              >
+                Remove
+              </ToastAction>
+            ),
+          });
         }}
         className="shrink-0"
         variant="destructive"
