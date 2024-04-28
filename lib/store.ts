@@ -67,23 +67,3 @@ export const useActivitiesStore = create(
     }
   )
 );
-
-export const useSettingsStore = create(
-  persist<{
-    hiddenCategories: string[];
-    toggleHiddenCategory: (category: string) => void;
-  }>(
-    (set, get) => ({
-      hiddenCategories: [],
-      toggleHiddenCategory: (category) =>
-        set({
-          hiddenCategories: get().hiddenCategories.includes(category)
-            ? get().hiddenCategories.filter((c) => c !== category)
-            : [...get().hiddenCategories, category],
-        }),
-    }),
-    {
-      name: "settings-storage",
-    }
-  )
-);
